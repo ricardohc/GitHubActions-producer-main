@@ -15,9 +15,9 @@ public class ProduceMessageServiceImpl implements ProduceMessageService {
     private final RabbitTemplate rabbitTemplate;
 
     public String produceMessage(String message) {
-        log.info("Producing message: {}", message);
+        log.info("Producing message(Enviando mensaje): {}", message);
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "myRoutingKey.messages",
                 message);
-        return "Message(" + message + ")" + " has been produced.";
+        return "Message(" + message + ")" + " Mensaje de prueba RHC enviado con exito...";
     }
 }
